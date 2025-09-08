@@ -1,35 +1,51 @@
-const{test,expect} = require ('playwright/test');
-test('Locators_builtin', async ({page})=>{
+import { test, expect } from '@playwright/test';
 
-await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+test('Locators_builtin', async ({ page }) => {
 
-const pageImage =  await page.getByAltText('company-branding');
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
-await expect(pageImage).toBeVisible;
+    const pageImage = page.getByAltText('company-branding');
 
-console.log('Logo Image is Visible');
+    expect(pageImage).toBeVisible;
 
-// page.getByPlaceholder() -> to locate an input by placeholder
-await page.getByPlaceholder('Username').fill('Admin');
+    console.log('Logo Image is Visible');
 
-await page.getByPlaceholder('Password').fill('admin123');
+    // page.getByPlaceholder() -> to locate an input by placeholder
+    await page.getByPlaceholder('Username').fill('Admin');
 
-//submit button
-await page.getByRole('button',{type:'submit'}).click();
+    await page.getByPlaceholder('Password').fill('admin123');
 
-//Inner Text
+    //submit button
+    await page.getByRole('button', { type: 'submit' }).click();
 
-//const pageText = await page.getByText('Test User');
-//await expect(pageText).toBeVisible();
+    //Inner Text
 
-//await page.waitForSelector('//p[@class="oxd-userdropdown-name"]');
+    //const pageText = await page.getByText('Test User');
+    //await expect(pageText).toBeVisible();
 
-const name = page.locator('//p[@class="oxd-userdropdown-name"]').textContent();
-console.log('logged in user is:',name);
+    //await page.waitForSelector('//p[@class="oxd-userdropdown-name"]');
 
-await expect( await page.getByText(name)).toBeVisible();
+    await page.waitForTimeout(5000);
+    const name = await page.locator('//p[@class="oxd-userdropdown-name"]').textContent();
+    console.log('logged in user is:', name);
 
+    await expect(page.getByText(name)).toBeVisible();
 
+})
 
+test('LocatorsNew1', async ({ page }) => {
+    await page.goto('https://demo.nopcommerce.com/');
 
+    const logo = page.getByAltText('nopCommerce demo store');
+    expect(logo).toBeVisible();
+    console.log("Logo is Visible");
+
+    const searchBox = page.getByPlaceholder('Search store');
+
+    expect(searchBox).toBeVisible();
+    expect(searchBox).toBeEditable();
+    expect(searchBox).toBeEnabled();
+
+    await searchBox.fill("Apple MacBook Pro");
+    console.log("Apple MacBook Pro is searched");
 })

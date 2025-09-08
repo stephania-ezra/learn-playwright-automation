@@ -1,23 +1,23 @@
-const {test, expect} = require('@playwright/test');
 
+import { test, expect } from '@playwright/test';
+test('Home Page', async ({ page }) => {
 
-test('Home Page',async ({page})=>{
+    await page.goto('https://www.lambdatest.com/selenium-playground/bootstrap-modal-demo');
+    // await page.screenshot({ path: 'tests/screenshots/' + Date.now() + 'Home Page Screenshot.png' });
 
-await page.goto('https://www.demoblaze.com/');
+    const pageTitle = page.title;
 
-const pageTitle= page.title;
+    //print the title
+    console.log('Page Title:', pageTitle);
 
-//print the title
-console.log('Page Title:',pageTitle);
+    await expect(page).toHaveTitle('Selenium Grid Online | Run Selenium Test On Cloud');
 
-await expect(page).toHaveTitle('STORE');
+    const pageURL = page.url;
+    //print the URL
+    console.log('Page URL:', pageURL);
 
-const pageURL = page.url;
-//print the URL
-console.log('Page URL:',pageURL);
-
-await expect(page).toHaveURL('https://www.demoblaze.com/');
-
-page.close;
+    await expect(page).toHaveURL('https://www.lambdatest.com/selenium-playground/bootstrap-modal-demo');
+    await page.waitForTimeout(3000);
+    await page.close();
 
 })
