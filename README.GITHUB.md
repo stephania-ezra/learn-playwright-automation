@@ -17,3 +17,10 @@ Follow this page [Github docs](https://docs.github.com/en/migrations/importing-s
 - git remote add origin https://github.com/stephania-ezra/playwrightAutomationVSCodeExt.git
 - git branch -M main
 - git push -u origin main
+
+
+## 4. Push local changes to Github repo
+- git status
+- git add filename
+- git commit -m "removing testonly"
+- git push origin main
