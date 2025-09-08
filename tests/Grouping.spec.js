@@ -34,7 +34,7 @@ test.describe('Group1', () => {
 
 })
 
-test.describe.only('Group2', () => {
+test.describe('Group2', () => {
     test('Test3', async ({ page }) => {
 
         console.log("This is Third Test");
