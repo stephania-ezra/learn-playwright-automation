@@ -26,8 +26,8 @@ test('LocatingMultipleElements', async ({ page }) => {
     const productLength = products.length;
     console.log(productLength);
 
-    //expect(productLength).toBe(9);
-    expect(products).toHaveLength(9);
+    expect(productLength).toBe(9);
+    //expect(products).toHaveLength(9);
 
     for (const product of products) {
         const productText = await product.textContent();

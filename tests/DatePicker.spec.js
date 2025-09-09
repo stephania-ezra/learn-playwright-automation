@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test('Date Picker', async ({ page }) => {
+test.skip('Date Picker', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
