@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test.skip('Annotations Test', async ({ page }) => {
+test('Annotations Test', async ({ page }) => {
 
     console.log("this is my first test");
 })
 
-test.skip('Annotation Test', async ({ page }) => {
+test('Annotation Test', async ({ page }) => {
     test.fail(); //expected
     console.log("this is my second test");
     expect(1).toBe(2); //actual 
@@ -23,12 +23,12 @@ test('Annotation TestingNew', async ({ page, browserName }) => {
 
     console.log("this is my fourth test");
     if (browserName == 'firefox') {
-        test.skip();
+        test();
     }
 });
 */
 
-test.skip('Annotation TestingNew', async ({ page, browserName }) => {
+test('Annotation TestingNew', async ({ page, browserName }) => {
     console.log("this is my fifth test");
     if (browserName == 'firefox') {
         test.fail();
@@ -36,7 +36,7 @@ test.skip('Annotation TestingNew', async ({ page, browserName }) => {
 });
 
 //checking slow annotation 
-test.skip('test7', async ({ page, browserName }) => {
+test('checking slow annotation', async ({ page, browserName }) => {
     //test.slow(); //triple the timeout 1000*3 = 3000ms
     test.setTimeout(5000);
     console.log("this is my sixth test");

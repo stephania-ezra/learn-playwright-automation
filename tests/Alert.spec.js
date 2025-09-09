@@ -1,7 +1,7 @@
 //const{test,expect} = require('@playwright/test');
 
 import { test, expect } from '@playwright/test';
-test.skip('Alert with OK', async ({ page }) => {
+test('Alert with OK', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
@@ -21,7 +21,7 @@ test.skip('Alert with OK', async ({ page }) => {
 
 
 
-test.skip('Alert Test', async ({ page }) => {
+test('Alert Test', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
@@ -43,7 +43,7 @@ test.skip('Alert Test', async ({ page }) => {
 });
 
 
-test.skip('Alert Test with Prompt', async ({ page }) => {
+test('Alert Test with Prompt', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
