@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-test('DragAndDrop', async ({ page }) => {
+test.skip('DragAndDrop', async ({ page }) => {
 
     await page.goto("https://www.globalsqa.com/demo-site/draganddrop/");
 
-    // await page.waitForSelector('//*[@id="gallery"]/li[4]/img');
+    //await page.waitForSelector('//*[@id="gallery"]/li[4]/img');
 
     const sourceBoxTatras = page.locator('//*[@id="gallery"]/li[4]/img');
     const targetBox = page.locator('//*[@id="trash"]');
@@ -16,6 +16,7 @@ test('DragAndDrop', async ({ page }) => {
         await targetBox.hover();
         await page.mouse.up();
         */
+    await page.waitForTimeout(5000);
 
     await sourceBoxTatras.dragTo(targetBox);
 

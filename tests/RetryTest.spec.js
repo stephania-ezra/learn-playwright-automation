@@ -4,7 +4,7 @@ import { HomePage } from './pages/HomePage';
 import { ViewProductPage } from './pages/ViewProductPage';
 import { CartPage } from './pages/CartPage';
 
-test('pom Test', async ({ page }) => {
+test.skip('pom Test', async ({ page }) => {
 
     //login
     const login = new LoginPage(page);

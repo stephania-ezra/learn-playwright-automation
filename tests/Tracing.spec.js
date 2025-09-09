@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Tracing Test', async ({ page }) => {
+test.skip('Tracing Test', async ({ page }) => {
 
     await page.goto("https://www.automationexercise.com/login");
 

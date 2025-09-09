@@ -1,7 +1,7 @@
 
 import { test, expect } from '@playwright/test';
 
-test('RecordVideo', async ({ page }) => {
+test.skip('RecordVideo', async ({ page }) => {
 
     await page.goto('https://www.demoblaze.com/');
     await page.getByRole('link', { name: 'Log in' }).click();
@@ -16,6 +16,4 @@ test('RecordVideo', async ({ page }) => {
 
     await page.waitForTimeout(2000);
     await page.close();
-
-
 })

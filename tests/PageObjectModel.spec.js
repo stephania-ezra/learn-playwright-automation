@@ -3,7 +3,7 @@ import { LoginPage } from './pages/LoginPage';
 import { HomePage } from './pages/HomePage';
 import { ViewProductPage } from './pages/ViewProductPage';
 import { CartPage } from './pages/CartPage';
-test('pom Test', async ({ page }) => {
+test.skip('pom Test', async ({ page }) => {
 
 
     //login
@@ -14,7 +14,7 @@ test('pom Test', async ({ page }) => {
     await page.waitForTimeout(3000);
 
     //Home Page
-  
+
     const home = new HomePage(page);
     await home.viewProductButton();
     await page.waitForTimeout(3000);

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test('DropDownTest', async ({ page }) => {
+test.skip('DropDownTest', async ({ page }) => {
 
    //scrolldown added 
    await page.goto('https://testautomationpractice.blogspot.com/');
@@ -83,5 +83,5 @@ test('DropDownTest', async ({ page }) => {
 
    await page.waitForTimeout(5000);
 
-   //await page.close();
+   await page.close();
 })

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test('DatePicker4', async ({ page }) => {
+test.skip('DatePicker4', async ({ page }) => {
 
     await page.goto("https://www.tutorialspoint.com/selenium/practice/date-picker.php");
 

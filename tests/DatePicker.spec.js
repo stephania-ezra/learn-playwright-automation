@@ -9,9 +9,9 @@ test('Date Picker', async ({ page }) => {
 
 
     //method 2
-    const expectedMonth = 'August';
-    const expectedDate = 4;
-    const expectedYear = 2016;
+    const expectedMonth = 'September';
+    const expectedDate = 9;
+    const expectedYear = 2025;
 
     await page.locator('#datepicker').click();
 

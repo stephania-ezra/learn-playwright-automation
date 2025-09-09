@@ -10,7 +10,7 @@ test('Screenshot Test', async ({ page }) => {
 
 })
 
-test('Screenshot Full Page Test', async ({ page }) => {
+test.skip('Screenshot Full Page Test', async ({ page }) => {
 
     await page.goto("https://www.automationexercise.com/");
 

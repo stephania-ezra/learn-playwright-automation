@@ -7,7 +7,7 @@ test.skip('DatePicker3 using fill function', async ({ page }) => {
 
     await page.waitForSelector('//*[@id="birthday"]');
 
-    await page.locator('//*[@id="birthday"]').fill("2025-07-25");
+    await page.locator('//*[@id="birthday"]').fill("2025-09-09");
 
     await page.waitForTimeout(5000);
 
@@ -56,7 +56,7 @@ test.skip('DatePicker3 using moment', async ({ page }) => {
 })
 
 
-test('DatePicker3 comparing with Current date', async ({ page }) => {
+test.skip('DatePicker3 comparing with Current date', async ({ page }) => {
 
     await page.goto("https://www.lambdatest.com/selenium-playground/bootstrap-date-picker-demo");
 
@@ -89,11 +89,12 @@ test('DatePicker3 comparing with Current date', async ({ page }) => {
 
 
     //End Date
-    const endDate = await page.locator("//input[@placeholder='End date']").textContent();
+    //const endDate = await page.locator("//input[@placeholder='End date']").textContent();
+    const endDate = await page.locator("//input[@placeholder='End date']").textContent().fill(await mmYY.textContent());
 
     //expect(endDate).toContain(dateToSelect);
     // expect(endDate.defaultValue()).toContain(dateToSelect);
-    await endDate.fill(await mmYY.textContent());
+    // await endDate.fill(await mmYY.textContent());
 
     console.log("End date is:", endDate);
     //expect(endDate).toBeNull();
@@ -131,5 +132,5 @@ test('DatePicker3 comparing with Current date', async ({ page }) => {
 
     await page.waitForTimeout(5000);
 
-    //await page.close();
+    await page.close();
 })

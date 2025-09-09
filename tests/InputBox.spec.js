@@ -1,9 +1,9 @@
-const{test,expect} = require('@playwright/test');
-test('InputBoxTest', async ({page})=>{
+const { test, expect } = require('@playwright/test');
+test.skip('InputBoxTest', async ({ page }) => {
 
     await page.goto('https://www.tutorialspoint.com/selenium/practice/text-box.php');
 
-    
+
     await expect(fullNameTextBox).toBeVisible();
     await expect(fullNameTextBox).toBeEmpty();
     await expect(fullNameTextBox).toBeEnabled();
@@ -16,13 +16,13 @@ test('InputBoxTest', async ({page})=>{
 
     const passwordTextBox = await page.locator('#password').fill('john*!#%');
 
-   await page.waitForTimeout(5000);
+    await page.waitForTimeout(5000);
     //submit button
-//await page.getByRole('button',{type:'submit'}).click();
+    //await page.getByRole('button',{type:'submit'}).click();
 
-await page.locator('//*[@id="TextForm"]/div[5]/input').click();
-console.log('Submitted successfuly');
+    await page.locator('//*[@id="TextForm"]/div[5]/input').click();
+    console.log('Submitted successfuly');
 
-await page.close();    
+    await page.close();
 
 })

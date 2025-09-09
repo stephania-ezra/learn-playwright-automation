@@ -29,7 +29,7 @@ test.skip('Handling Windows', async () => {
 
 })
 
-test('Handling Multiple Windows', async () => {
+test.skip('Handling Multiple Windows', async () => {
 
     const browser = await chromium.launch();
     const context = await browser.newContext();

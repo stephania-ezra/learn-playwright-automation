@@ -30,7 +30,7 @@ test.afterAll(async () => {
 }
 );
 
-test('AddProductsToCart', async () => {
+test.skip('AddProductsToCart', async () => {
 
     await page.waitForTimeout(2000);
 

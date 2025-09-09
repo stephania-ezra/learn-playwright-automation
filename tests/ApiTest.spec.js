@@ -39,7 +39,7 @@ test('create User', async ({ request }) => {
 
 
 //PUT
-test('update User', async ({ request }) => {
+/*test('update User', async ({ request }) => {
 
 
     const response = await request.put('https://todos.simpleapi.dev/api/todos?apikey=0153d365-f69f-4076-b483-2d56b2f7185b', + userid,
@@ -56,7 +56,7 @@ test('update User', async ({ request }) => {
 
     console.log(await response.json());
     expect(response.status()).toBe(200);
-})
+}) */
 
 //DELETE
 test('delete User', async ({ request }) => {

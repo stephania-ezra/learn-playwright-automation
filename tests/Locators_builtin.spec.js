@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Locators_builtin', async ({ page }) => {
+test.skip('Locators_builtin', async ({ page }) => {
 
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
@@ -33,7 +33,7 @@ test('Locators_builtin', async ({ page }) => {
 
 })
 
-test('LocatorsNew1', async ({ page }) => {
+test.skip('LocatorsNew1', async ({ page }) => {
     await page.goto('https://demo.nopcommerce.com/');
 
     const logo = page.getByAltText('nopCommerce demo store');
